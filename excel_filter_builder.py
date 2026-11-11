@@ -152,20 +152,20 @@ def field(label: str, key: str, value: str, path: str, placeholder: str = "") ->
 
 
 def main() -> None:
-    st.set_page_config(page_title="엑셀 검색 함수식 생성기", layout="wide")
-    st.title("엑셀 검색 함수식 생성기")
+    st.set_page_config(page_title="검색 함수식 생성도구", layout="wide")
+    st.title("검색 함수식 생성도구")
     st.caption("TERM은 쉼표(,)로 구분하고, 한 TERM 안에서는 *를 사용합니다. "
                "경로에 범위를 쉼표로 여러 개 적으면 이어 붙여 검색합니다. 모든 범위는 행 수가 같아야 합니다.")
 
     st.subheader("서지사항")
-    field("발간처", "pub", "기획예산처, 금융위원회, 국토교통부", "B2:B1000")
+    field("발간처", "pub", "", "B2:B1000")
     field("발간일 (이후)", "date", "20260101", "C2:C1000", "YYYYMMDD")
 
     st.subheader("검색어 입력")
-    field("TERM(주)", "main", "금융*제도*개편", "D2:D1000")
-    field("TERM(관련어)", "rel", "파이낸스*정책*개선", "D2:D1000")
-    field("TERM(부)", "sub", "혁신,보안,AI,기술개발,리스크*관리", "D2:D1000")
-    field("TERM(제외)", "exc", "협력,공급망", "D2:D1000")
+    field("TERM(주)", "main", "", "D2:D1000")
+    field("TERM(관련어)", "rel", "", "D2:D1000")
+    field("TERM(부)", "sub", "", "D2:D1000")
+    field("TERM(제외)", "exc", "", "D2:D1000")
 
     st.subheader("출력 설정")
     c1, c2, c3, c4 = st.columns(4)
